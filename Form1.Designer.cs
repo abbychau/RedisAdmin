@@ -36,6 +36,9 @@
             lblType = new Label();
             btnRefresh = new Button();
             lstEndpoints = new ListBox();
+            btnAdd = new Button();
+            cboKeyType = new ComboBox();
+            btnSave = new Button();
             SuspendLayout();
             // 
             // btnConnect
@@ -60,9 +63,9 @@
             // 
             lstKeys.FormattingEnabled = true;
             lstKeys.ItemHeight = 15;
-            lstKeys.Location = new Point(167, 41);
+            lstKeys.Location = new Point(167, 71);
             lstKeys.Name = "lstKeys";
-            lstKeys.Size = new Size(120, 394);
+            lstKeys.Size = new Size(120, 364);
             lstKeys.TabIndex = 4;
             lstKeys.SelectedIndexChanged += lstKeys_SelectedIndexChanged;
             // 
@@ -99,6 +102,7 @@
             btnRefresh.TabIndex = 8;
             btnRefresh.Text = "Refresh";
             btnRefresh.UseVisualStyleBackColor = true;
+            btnRefresh.Click += btnRefresh_Click;
             // 
             // lstEndpoints
             // 
@@ -110,11 +114,42 @@
             lstEndpoints.TabIndex = 9;
             lstEndpoints.SelectedIndexChanged += lstEndpoints_SelectedIndexChanged;
             // 
+            // btnAdd
+            // 
+            btnAdd.Location = new Point(265, 43);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new Size(22, 23);
+            btnAdd.TabIndex = 11;
+            btnAdd.Text = "+";
+            btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.Click += btnAdd_Click;
+            // 
+            // cboKeyType
+            // 
+            cboKeyType.FormattingEnabled = true;
+            cboKeyType.Location = new Point(167, 43);
+            cboKeyType.Name = "cboKeyType";
+            cboKeyType.Size = new Size(92, 23);
+            cboKeyType.TabIndex = 12;
+            // 
+            // btnSave
+            // 
+            btnSave.Location = new Point(361, 11);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(75, 23);
+            btnSave.TabIndex = 13;
+            btnSave.Text = "Save";
+            btnSave.UseVisualStyleBackColor = true;
+            btnSave.Click += btnSave_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(800, 449);
+            Controls.Add(btnSave);
+            Controls.Add(cboKeyType);
+            Controls.Add(btnAdd);
             Controls.Add(lstEndpoints);
             Controls.Add(btnRefresh);
             Controls.Add(lblType);
@@ -140,5 +175,8 @@
         private Label lblType;
         private Button btnRefresh;
         private ListBox lstEndpoints;
+        private Button btnAdd;
+        private ComboBox cboKeyType;
+        private Button btnSave;
     }
 }
